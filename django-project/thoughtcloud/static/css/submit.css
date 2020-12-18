@@ -156,13 +156,13 @@ codrops-demos{
 	font-style: italic;
 	font-size: 12px;
 	padding: 3px 5px;
-	margin: 0px 3p.x;
+	margin: 0px 3px;
 	font-weight: 800;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.05) inset;
 	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 	background: rgba(104,171,194,0.5);
-}
+
 .codrops-demos a:hover{
 	background: #4fa2c4;
 }

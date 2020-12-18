@@ -7,33 +7,26 @@
 
 {% block content %}
     <div class = "results">
-    <h1>within the last XXX, you thought of writing- </h1>
-    <br><br><br>
+    <form method = "GET" >
+        <h1>Till now, you thought of writing- </h1>
         <table class="table">
-             <thead class = "thead-dark">
+            <thead class = "thead-dark">
                 <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Done/not</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <td>Thought</td>
+                    <td>Date</td>
                 </tr>
             </thead>
-    <tbody>
-    {% for obj in all_thoughts %}     
-        <tr>
-            <td scope="row">{{ obj.thought }}</td>
-            <td>{{ obj.done }}</td>
-            <td>Edit</td>
-            <td>Delete</td>
-        </tr>
-    {% endfor %}
-    <h2 id = "quote"> If you took the time and made effort to write something down, it must be important!</h3>
+            <tbody>
+                {% for obj in data%}     
+                <tr>
+                    <td scope="row">{{ obj.thought }}</td>
+                    <td>{{ obj.date.date}}</td>
+                </tr>
+                {% endfor %}
 
     </tbody>
-</table>
-</div>
-
-
+        </table>
+    <h2 id = "quote"> If you took the time and made effort to write something down, it must be important!</h3>
     </div>
 
 {% endblock content %}

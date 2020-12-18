@@ -1,12 +1,10 @@
 html{
 	height: 100%;
 }
-
 body{
     color: rgb(40, 40, 58);
     background-color: rgb(0, 0, 0, 1);
-	/* background-image: url(../images/bg4.jpg); */
-	background-image: url("/static/images/bg4.jpg")
+	background-image: url(../images/bg4.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -20,7 +18,7 @@ body{
 .topnav {
     background-color:rgb(0, 0, 0, 0);
     overflow: hidden;
-	border-color: rgb(235, 214, 186)74);
+	border-color: rgb(235, 214, 186);
 	background-size: cover;
 	margin: 1%;
   }
