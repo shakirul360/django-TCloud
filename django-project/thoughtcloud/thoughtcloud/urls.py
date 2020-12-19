@@ -16,10 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from retrospection import views as retro_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('retro/', include('retrospection.urls'))
+    path('', retro_views.index, name = 'tcloud'),
+    path('retro/', include('retrospection.urls')),
+    path('account/', include('users_app.urls')),
+    path('submit', retro_views.submit, name = 'submit'),
+    #path('login', retro_views.login, name = 'login'),
+    #path('sign', retro_views.sign, name = 'sign'),
+    
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -4,6 +4,7 @@ from retrospection.models import Thought
 from retrospection.form import ThoughtForm
 from datetime import timedelta
 from django.utils import timezone
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -37,6 +38,9 @@ def retro(request):
         else:
             print(form.is_valid())
             print(form.errors)
+            #paginator = Paginator(data, 5)
+            #page = request.GET.get('pg')
+            #data = paginator.get_page(page)
             return render(request, 'look.html', {'data': data})
     return render(request, 'retro.html')
 
@@ -64,7 +68,7 @@ def submit(request):
     }
     return render(request, 'submit.html')
 
-def tcloud(request):
+def index(request):
     if request.method == "POST":
         form = ThoughtForm(request.POST or None)
         if form.is_valid():

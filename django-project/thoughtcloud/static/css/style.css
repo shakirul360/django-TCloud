@@ -18,7 +18,7 @@ body{
 .topnav {
     background-color:rgb(0, 0, 0, 0);
     overflow: hidden;
-	border-color: rgb(235, 214, 186);
+	border-color: rgb(235, 214, 186)74);
 	background-size: cover;
 	margin: 1%;
   }
@@ -117,6 +117,19 @@ body .results{
     font-family: 'Noto Sans', sans-serif;
     text-align: center;
 	margin: auto;
+}
+
+body .results table{
+	border-radius: 3px;
+	padding: 5px;
+	background-color:rgb(0, 0, 0, 0.3);
+	color: rgba(190, 192, 216, 0.842);
+    font-size: medium;
+    font-style:initial;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+	margin: auto;
+	
 }
 body .results h2 {
 	color:rgba(190, 192, 216, 0.842);

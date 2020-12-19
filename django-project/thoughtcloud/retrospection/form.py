@@ -1,5 +1,5 @@
 from django import forms 
-from retrospection.models import Thought, Time
+from retrospection.models import Thought
 
 class ThoughtForm(forms.ModelForm):
     class Meta:
