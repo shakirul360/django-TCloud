@@ -5,10 +5,9 @@ from retrospection.form import ThoughtForm
 from datetime import timedelta
 from django.utils import timezone
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
+
 def retro(request):
     if request.method == "POST":
         data = Thought.objects.all
@@ -46,7 +45,7 @@ def retro(request):
     return render(request, 'retro.html')
 
 
-@login_required
+
 def look(request):
     all_thoughts = Thought.objects.all
     today = timezone.now().date()
@@ -73,7 +72,6 @@ def index(request):
     if request.method == "POST":
         form = ThoughtForm(request.POST or None)
         if form.is_valid():
-            form.save(commit = False).manage = request.user
             form.save()
         return redirect('submit')
     else:
