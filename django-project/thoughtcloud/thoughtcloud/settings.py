@@ -118,3 +118,4 @@ STATIC_DIRS = [os.path.join(BASE_DIR, 'static')]
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_REDIRECT_URL = "tcloud"
+LOGIN_URL = "login"
