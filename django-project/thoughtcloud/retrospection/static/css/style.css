@@ -12,6 +12,7 @@ body{
     margin: 0;
 	padding: 0;
 	background-position-y:-250px;
+	background-attachment: fixed;
     
 }
 
@@ -21,6 +22,7 @@ body{
 	border-color: rgb(235, 214, 186)74);
 	background-size: cover;
 	margin: 1%;
+	
   }
   
   /* Style the links inside the navigation bar */
@@ -39,8 +41,10 @@ body{
 	max-width:40%; /* 30 % */
 	min-width: 9%;
 
+
 	.topnav left active{
 		text-decoration: none;
+
 	}
 	.topnav button a{
 		text-decoration: none;
@@ -53,6 +57,7 @@ body{
 	font: normal 20px 'Cookie', cursive;
 	margin: 0;
 	color:  #e3e5e9;
+
   }
   
   /* Change the color of links on hover */
