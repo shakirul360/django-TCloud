@@ -73,6 +73,9 @@ def index(request):
         form = ThoughtForm(request.POST or None)
         if form.is_valid():
             form.save()
+        else:
+            print(form.errors)
+            print(form.is_valid())
         return redirect('submit')
     else:
         return render(request, 'index.html')
