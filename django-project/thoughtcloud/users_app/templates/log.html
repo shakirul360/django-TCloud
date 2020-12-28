@@ -21,40 +21,51 @@
     <a class="navbar-brand" href="#">ThoughtCloud</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
       </li>
     </ul>
-    <h2> Login to ThoughtCloud</h2>
+    
 
     <form class="form-inline my-2 my-lg-0">
     </form>
   </div>
 </nav>
+<br>
+<div class="row">
+    <div class="my-auto ml-auto mr-auto mx-auto">
+
+      <h3>
+        Login to ThoughtCloud -
+      <small class="text-muted">A diary with an ability to look back</small>
+    </h3>
+
+    {% load crispy_forms_tags %}
 
 
-{% load crispy_forms_tags %}
+    {% block title %}
+        <title>ThoughtCloud</title>
+    {% endblock title %}
+    <body>
+    {% block content %}
+        <div class = "regform">
+                <section >				
+                    
+                    <form method = "POST" class = "ml-5 col-6 mt-5">
+                        {% csrf_token %}
 
+                        {{ form|crispy }}
 
-{% block title %}
-    <title>ThoughtCloud</title>
-{% endblock title %}
-<body>
-{% block content %}
-    <div class = "regform">
-            <section >				
-                
-                <form method = "POST" class = "ml-5 col-6 mt-5">
-                    {% csrf_token %}
+                        <br>
+                        <button class="btn btn-info" >Login</button>
+                        <button type="button" class="btn btn-secondary">Sign Up</button>
+                    </form>
+                </section>
+                </div>
 
-                    {{ form|crispy }}
+    {% endblock content %}
 
-                    <br>
-                    <button class="btn btn-info" >Login</button>
-                </form>
-            </section>
-            </div>
-
-{% endblock content %}
+  </div>
+</div>
 
 </body>
 </html>

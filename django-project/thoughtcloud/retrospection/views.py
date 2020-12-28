@@ -27,22 +27,22 @@ def look(request):
             if time == "yesterday":
                 #print("yesterday selected")
                 yesterday = timezone.now().date() - timedelta(days=1)
-                data = Thought.objects.filter(date__gte=yesterday)
+                data = Thought.objects.filter(date__gte=yesterday,  manager = request.user)
             elif time == "lastweek":
                 #print("last week selected")
                 week = timezone.now().date() - timedelta(days=7)
-                data = Thought.objects.filter(date__gte=week, date__lt=today)
+                data = Thought.objects.filter(date__gte=week, manager = request.user)
             elif time == "lastmonth":
                 #print("last month selected")
                 month = timezone.now().date() - timedelta(days=30)
-                data = Thought.objects.filter(date__gte=month, date__lt=today)
+                data = Thought.objects.filter(date__gte=month,  manager = request.user )
             elif time == "lastyear":
                 year = timezone.now().date() - timedelta(days=365)
-                data = Thought.objects.filter(date__gte=year, date__lt=today)
+                data = Thought.objects.filter(date__gte=year, manager = request.user)
             elif time == "forever":
-                data = Thought.objects.all 
+                data = Thought.objects.filter(manager = request.user) 
             elif time == "today":
-                data = Thought.objects.filter(date__gte=today)
+                data = Thought.objects.filter(date__gte=today, manager = request.user)
 
             return render(request,'look.html', {'data' : data})
     print(request.method)

@@ -18,10 +18,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">ThoughtCloud</a>
+    <a class="navbar-brand" href= "">ThoughtCloud</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -32,27 +32,33 @@
 
 {% load crispy_forms_tags %}
 
+<div class="column">
+    <div class=" mx-auto">
 
-{% block title %}
-    <title>ThoughtCloud</title>
-{% endblock title %}
-<body>
-{% block content %}
-    <div class = "regform">
-            <section >				
-                
-                <form method = "POST" class = "ml-5 col-6 mt-5">
-                    {% csrf_token %}
+      <body>
+      <br>
+        <h3 class="text-center">
+          Sign up on ThoughtCloud -
+            <small class="text-muted">A diary with an ability to look back</small>
+        </h3>
+      {% block content %}
+          <div class = "regform">
+                  <section >				
+                      
+                      <form method = "POST" class = "ml-5 col-6 mt-5">
+                          {% csrf_token %}
 
-                    {{ register_form|crispy }}
+                          {{ register_form|crispy }}
 
-                    <br>
-                    <button class="btn btn-info" >submit</button>
-                </form>
-            </section>
-            </div>
+                          <br>
+                          <button class="btn btn-info" >submit</button>
+                      </form>
+                  </section>
+                  </div>
 
-{% endblock content %}
+      {% endblock content %}
+    </div>
+
 
 </body>
 </html>
