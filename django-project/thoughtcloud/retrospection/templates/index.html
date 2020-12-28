@@ -11,9 +11,9 @@
         <h1 id = "whatsup">What's going on inside that sharp brain of yours?</h1>
         <div class = "thought">
         <br>
-		<form method = "POST">
+		<form method = "POST" enctype= multipart/form-data >
 			{% csrf_token %}
-        <textarea placeholder = "The most precious thing are our thoughts which define us." rows = "5" cols = "60" name = "thought"></textarea><br>
+        <textarea type = "text" placeholder = "The most precious thing are our thoughts which define us." rows = "5" cols = "60" name = "thought"></textarea><br>
         </div><br>
         <button><a type = "button" class = "submit" href = "">Submit</a></button>
 		</form>

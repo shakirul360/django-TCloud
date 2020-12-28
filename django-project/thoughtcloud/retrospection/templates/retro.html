@@ -9,7 +9,7 @@
     <div class = "body">
     <h2>Select the range of time in which you wrote something here</h2>
     <br><br>
-    <form method = "POST" enctype= multipart/form-data>
+    <form method = "POST" enctype= multipart/form-data action = {% url 'look' %}>
         {% csrf_token %}
         <div class = "lookback"
         <label for = "time"></label>
@@ -21,7 +21,7 @@
             <option value = "lastyear">Last Year</option>
             <option value = "forever">Forever</option>
         </select>
-            <button><a type= "button" class = "Look" id = "look" href = "">Look Back?!</a></button>
+            <button><a type= "submit" class = "Look" id = "look" href = "">Look Back?!</a></button>
         </form>
     <br><br><br>
     <h3>Will you look back on life and say "I wish I had" or "I'm glad I did?"<br><br>
