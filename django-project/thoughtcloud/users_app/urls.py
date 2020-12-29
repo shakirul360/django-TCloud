@@ -11,6 +11,7 @@ urlpatterns = [
     path('sign', views.sign, name = 'sign'),
     path('login', auth_views.LoginView.as_view(template_name = 'log.html'), name = 'login'),
     path('logout', auth_views.LogoutView.as_view(template_name = 'index.html'), name = 'logout'),
+    path('tcloud', views.index, name = 'tcloud'),
 
     
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

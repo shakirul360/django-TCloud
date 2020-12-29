@@ -15,3 +15,20 @@ def sign(request):
     else:
         register_form = RegisterForm()
     return render(request, 'register.html', {'register_form' : register_form})
+
+
+
+def index(request):
+    if request.method == "POST":
+        form = ThoughtForm(request.POST or None)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.manager = request.user
+            instance.save()
+        #else:
+        #    print(form.is_valid())
+        #   print(form.errors)
+        return redirect('submit')
+
+    else:
+        return render(request, 'index.html')

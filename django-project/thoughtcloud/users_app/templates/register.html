@@ -18,7 +18,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href= "">ThoughtCloud</a>
+    <a class="navbar-brand" href= {% url 'tcloud' %}>ThoughtCloud</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
@@ -37,21 +37,24 @@
 
       <body>
       <br>
-        <h3 class="text-center">
+        <h3 class="text-center fs-2 d-block">
           Sign up on ThoughtCloud -
-            <small class="text-muted">A diary with an ability to look back</small>
+            <small class="text-muted d-block">  A diary with an ability to look back</small>
         </h3>
       {% block content %}
           <div class = "regform">
                   <section >				
                       
-                      <form method = "POST" class = "ml-5 col-6 mt-5">
+                      <form method = "POST" class = "ml-5 col-10 mt-5 ">
                           {% csrf_token %}
 
                           {{ register_form|crispy }}
 
                           <br>
                           <button class="btn btn-info" >submit</button>
+
+                          <a href = {% url 'login' %} class="bg-light text-dark"><button type="button" class="btn btn-warning float-xl-right">Log in?</button></a>
+                          <p class="fs-2 float-xl-right">Already have an account?</p>
                       </form>
                   </section>
                   </div>
