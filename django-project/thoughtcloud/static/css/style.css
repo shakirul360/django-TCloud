@@ -12,6 +12,7 @@ body{
     margin: 0;
 	padding: 0;
 	background-position-y:-250px;
+	background-attachment: fixed;
     
 }
 
@@ -21,6 +22,7 @@ body{
 	border-color: rgb(235, 214, 186)74);
 	background-size: cover;
 	margin: 1%;
+	
   }
   
   /* Style the links inside the navigation bar */
@@ -39,8 +41,10 @@ body{
 	max-width:40%; /* 30 % */
 	min-width: 9%;
 
+
 	.topnav left active{
 		text-decoration: none;
+
 	}
 	.topnav button a{
 		text-decoration: none;
@@ -53,6 +57,7 @@ body{
 	font: normal 20px 'Cookie', cursive;
 	margin: 0;
 	color:  #e3e5e9;
+
   }
   
   /* Change the color of links on hover */
@@ -218,7 +223,7 @@ textarea{
 	text-decoration: none;
 }
 footer{
-	position: relative;
+	position: absolute;
 	bottom: 0;
 }
 .footer-distributed{
@@ -390,4 +395,68 @@ footer{
  
 }
 
+@media screen and (max-width : 380px){
+	textarea {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	
+		width: 100%;
+	}
+	
+	.topnav button {
+		float: left;
+		background-color: rgb(0, 0, 0, 0.05);
+		color: #a08e8e;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 10px;
+		border-radius:  5px;
+		border-color: rgb(190, 169, 144);
+		margin: auto;
+		/*max-width:40%; 
+		min-width: 9%; */
+		width: 25%;
+	}
 
+	.topnav button a{
+		text-decoration: none;
+		font-size: 15px;
+	}
+
+	.topnav button .left a{
+		text-decoration: none;
+		font-size:10px;
+		height: 15px;
+	}
+	.topnav button .left{
+		font-size: 15px;
+	}
+}	
+
+/*body .regform {
+	border-radius: 3px;
+	padding: 5px;
+	background-color:rgb(0, 0, 0, 0.3);
+	color: rgba(190, 192, 216, 0.842);
+    font-size: medium;
+    font-style:initial;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+	margin: auto;
+	margin-top: 15px;
+	align-self:center;
+}*/
+
+body .regform button{
+	  height: 40px;
+      width: 150px;
+      text-align: center;
+      align-self: center;
+      background-color: #4CAF50;
+      color: white;
+	  border-radius: 5px;
+	  text-decoration: none;
+	  margin-bottom: 20px;
+}
