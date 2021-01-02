@@ -8,11 +8,16 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.views.generic.list import ListView
 
 # Create your views here.
 @login_required
 def retro(request):
     return render(request, 'retro.html')
+
+
+
+
 
 
 @login_required
@@ -46,14 +51,24 @@ def look(request):
                 data = Thought.objects.filter(date__gte=today, manager = request.user)
 
             #implementation of Pagination
-            paginator = Paginator(data, 10)
-            page = request.GET.get('pg')
-            #refreshing data
-            data = paginator.get_page(page)
+            #paginator = Paginator(data, 10)
+            #page = request.GET.get('pg')
+
+            #try:
+            #    page = int(request.GET.get('page', '1'))
+            #except:
+            #    page = 1
+
+            #try:
+            #    data = paginator.page(page)
+            #except(EmptyPage, InvalidPage):
+            #    data = paginator.page(paginator.num_pages)
 
 
+            
             return render(request,'look.html', {'data' : data})
     return render(request, 'look.html')
+
 
 
 def submit(request):

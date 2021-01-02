@@ -12,8 +12,8 @@ body{
     margin: 0;
 	padding: 0;
 	background-position-y:-250px;
-	background-attachment: fixed;
-    
+	background-attachment: fixed; */
+	
 }
 
 .topnav {
@@ -397,7 +397,7 @@ footer{
  
 }
 
-@media screen and (max-width : 380px){
+@media screen and (max-width : 420px){
 	textarea {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -417,9 +417,11 @@ footer{
 		border-radius:  5px;
 		border-color: rgb(190, 169, 144);
 		margin: auto;
+
 		/*max-width:40%; 
 		min-width: 9%; */
 		width: 25%;
+
 	}
 
 	.topnav button a{
@@ -435,6 +437,15 @@ footer{
 	.topnav button .left{
 		font-size: 15px;
 	}
+
+	.topnav .right button{
+		float: right;
+		text-decoration: none;
+		font: normal 15px 'Cookie', cursive;
+		margin: 0;
+		color:  #e3e5e9;
+	
+	  }
 }	
 
 /*body .regform {
