@@ -46,10 +46,12 @@ def look(request):
                 data = Thought.objects.filter(date__gte=today, manager = request.user)
 
             #implementation of Pagination
-           #paginator = Paginator(data, 7)
-           # page = request.GET.get('pg')
+            paginator = Paginator(data, 10)
+            page = request.GET.get('pg')
             #refreshing data
-            #data = paginator.get_page(page)
+            data = paginator.get_page(page)
+
+
             return render(request,'look.html', {'data' : data})
     return render(request, 'look.html')
 
