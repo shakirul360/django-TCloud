@@ -1,0 +1,17 @@
+--create a database using RDS mysql
+--save database name
+--save creator id and password on notepad
+--configure security group -- default
+--copy the endpoint and port number onto the notepad
+--open the cmd of rds desktop
+-- use command  mysql -h <endpoint> -u <creator id> -p
+--then pass in the password
+XX- if it doesn't work, configure the security group
+--command -CREATE DATABASE djangoprojectdb;
+--pip install mysqlclient
+--in settings.py, change the name to djangoprojectdb
+--specify the user by 'USER': 'creatorid'
+--specify the password by 'PASSWORD' : 'password'
+-specify the host by 'HOST': 'endpoint'
+--specify the port number by 'PORT':'portnumber'
+--add the EC2 public ip to the ALLOWED_HOSTS in settings.py.

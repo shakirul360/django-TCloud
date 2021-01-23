@@ -1,0 +1,6 @@
+DB instance identifier - mysql-db
+Master Username - shakirul360
+master password - gigabyte
+endpoint - mysql-db.ce9lka6jitss.ap-south-1.rds.amazonaws.com
+port - 3306
+
