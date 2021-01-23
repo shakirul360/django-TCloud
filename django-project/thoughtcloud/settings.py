@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wjvd+@s#sx$27n&-s919&_w)thkh*!0a1ex7@f3h5z+q3qrpuh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['EC2_DNS_NAME']
+ALLOWED_HOSTS = []
 
 
 # Application definition
