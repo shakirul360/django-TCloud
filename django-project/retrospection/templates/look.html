@@ -21,9 +21,10 @@
             </thead>
             <tbody>
                 {% for obj in data%}     
-                <tr>
+                <tr> 
                     <td scope="row">{{ obj.thought }}</td>
                     <td>{{ obj.date.date}}</td>
+                    <td>|| <a href = "{% url 'delete' obj.id %}"><button type="button" class="btn btn-outline-warning btn-sm"><p class="text-warning">Delete</p></button></a></td> 
                 </tr>
                 {% endfor %}
 

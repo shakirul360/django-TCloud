@@ -10,6 +10,7 @@ urlpatterns = [
     path('look', views.look, name = 'look'),
     path('tcloud', views.index, name = 'tcloud'),
     path('test', views.test, name = 'test'),
+    path('delete/<id>',views.delete, name = 'delete'),
     path('login', views.login, name = 'login'),
     path('sign', views.sign, name = 'sign')
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

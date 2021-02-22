@@ -98,3 +98,10 @@ def login(request):
 
 def sign(request):
     return render(request, 'sign.html')
+
+
+def delete(request, id):
+    thought = Thought.objects.get(pk = id)
+    thought.delete()
+
+    return render(request, 'retro.html')
