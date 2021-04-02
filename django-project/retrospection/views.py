@@ -105,3 +105,16 @@ def delete(request, id):
     thought.delete()
 
     return render(request, 'retro.html')
+
+
+def edit(request, id):
+    if request.method == "POST":
+        thought = Thought.objects.get(pk = id)
+        form = ThoughtForm(request.POST or None, instance = thought)
+        if form.is_valid():
+            form.save()
+
+        return redirect('index')
+
+    else:
+        return render(request, 'index.html')
