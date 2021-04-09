@@ -107,10 +107,12 @@ def delete(request, id):
     return render(request, 'retro.html')
 
 
-def edit(request, id):
+def edit(request,  *args, **kwargs):
     if request.method == "POST":
-        thought = Thought.objects.get(pk = id)
-        form = ThoughtForm(request.POST or None, instance = thought)
+        thought = request.POST['thought']
+        id = request.POST['id']
+        thought_x = Thought.objects.get(pk = id)
+        form = ThoughtForm(request.POST or None, instance = thought_x)
         if form.is_valid():
             form.save()
 

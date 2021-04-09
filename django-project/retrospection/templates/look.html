@@ -67,28 +67,27 @@
     <br><br>
 
     <script type="text/javascript"> 
-    {% comment %} $('.submit').click(function(){  {% endcomment %}
-    var form = $('#editt');
-    var btn =  $('#upload-form-btn');
-    id = $(this).attr("data-catid"); 
-    btn.bind('click', handleClick);
-    var formData = new FormData(); // Use FormData instead
-    formData.append('thought') // The first argument is the 'key' of the form data so change it to whatever works.
-    var handleClick = function (event) {
-        event.preventDefault();
-        $.ajax({
-            type: frm.attr('method'),
-            url: '/edit/id',
-            data: formData,
-            contentType: false,  // add this to indicate 'multipart/form-data'
-            success: function (data) {
-                alert('Form Submitted');
-            },
-            error: function(data) {
-                alert('Form submission failed');
-            }
-         });
-    }
+        $('.submit').click(function(){ 
+        var form = $('#editt');
+        var btn =  $('#upload-form-btn');
+        var id = $(this).attr("data-catid"); 
+        var el = document.getElementsByName("csrf_token");
+        csrf_value = el[0].getAttribute("value");
+        var handleClick = function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '/edit/',
+                data: {thought = 'thought', id = 'id', csrf_token = csrf_value},
+                contentType: false,  // add this to indicate 'multipart/form-data'
+                success: function (response) {
+                    alert('Form Submitted');
+                },
+                error: function(data) {
+                    alert('Form submission failed');
+                }
+            });
+        }
     </script>
 
 
