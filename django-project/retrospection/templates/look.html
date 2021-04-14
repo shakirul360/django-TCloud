@@ -40,11 +40,11 @@
                             <div class="modal-body">
                                 <form method = "POST" enctype= multipart/form-data id = "editt">
 			                        {% csrf_token %}
-                                    <textarea id = 'thought' style="resize:none" type = "text" placeholder = "The most precious thing are our thoughts which define us." rows = "5" cols = "40" name = "thought" required></textarea><br>
+                                    <textarea id = 'thought' style="resize:none" type = "text" placeholder = "{{ obj.thought }}." rows = "5" cols = "40" name = "thought" required></textarea><br>
                             </div><br>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a type = "button" data-catid = "{{ obj.id  }}"  class = "submit"><button type="button" class="btn btn-primary submit" id = "upload-form-btn">Save changes</button></a>
+                                <a type = "button" data-catid = "{{ obj.id  }}"><button type="button" class="btn btn-primary submit" id = "upload-form-btn">Save changes</button></a>
 
 		                        </form>
                             </div>
@@ -69,16 +69,15 @@
     <script type="text/javascript"> 
         $('.submit').click(function(){ 
         var form = $('#editt');
-        var btn =  $('#upload-form-btn');
+        var btn = $('#upload-form-btn');
         var id = $(this).attr("data-catid"); 
-        var el = document.getElementsByName("csrf_token");
-        csrf_value = el[0].getAttribute("value");
         var handleClick = function (event) {
+
             event.preventDefault();
             $.ajax({
                 type: "POST",
                 url: '/edit/',
-                data: {thought = 'thought', id = 'id', csrf_token = csrf_value},
+                data: {thought : 'thought', id : 'id'},
                 contentType: false,  // add this to indicate 'multipart/form-data'
                 success: function (response) {
                     alert('Form Submitted');
@@ -88,6 +87,7 @@
                 }
             });
         }
+        });
     </script>
 
 
