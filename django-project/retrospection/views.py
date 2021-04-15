@@ -9,6 +9,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.views.generic.list import ListView
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required
@@ -111,12 +112,9 @@ def edit(request,  *args, **kwargs):
     if request.method == "POST":
         thought = request.POST['thought']
         id = request.POST['id']
+        print(id)
+        print(thought)
         thought_x = Thought.objects.get(pk = id)
         form = ThoughtForm(request.POST or None, instance = thought_x)
         if form.is_valid():
             form.save()
-
-        return redirect('index')
-
-    else:
-        return render(request, 'index.html')
