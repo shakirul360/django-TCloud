@@ -72,7 +72,8 @@
          $('.submit').click(function(event) {
             var id = $(this).parent().attr("data-catid");
             var thought = $("#thought").val();
-            alert(id + "datas  "+thought)
+            //alert(id + "datas  "+thought)
+            //alert($("[name=csrfmiddlewaretoken]").val())
             event.preventDefault();
             $.ajax({
                 type: "POST",
@@ -80,9 +81,9 @@
                 data: {
                     'thought': thought,
                     'id': id,
-                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]").val()
                 },
-                contentType: false, // add this to indicate 'multipart/form-data'
+                //contentType: false, // add this to indicate 'multipart/form-data'
                 success: function(response) {
                 alert('Form Submitted');
                 location.reload();

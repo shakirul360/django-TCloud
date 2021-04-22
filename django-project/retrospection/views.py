@@ -112,9 +112,12 @@ def edit(request,  *args, **kwargs):
     if request.method == "POST":
         thought = request.POST['thought']
         id = request.POST['id']
-        print(id)
-        print(thought)
+        #print(id)
+        #print(thought)
         thought_x = Thought.objects.get(pk = id)
+        #print(thought_x)
         form = ThoughtForm(request.POST or None, instance = thought_x)
         if form.is_valid():
             form.save()
+
+        return render(request, 'retro.html')
