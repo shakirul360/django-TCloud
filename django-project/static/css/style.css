@@ -12,8 +12,8 @@ body{
     margin: 0;
 	padding: 0;
 	background-position-y:-250px;
-	background-attachment: fixed;
-    
+	background-attachment: fixed; */
+	
 }
 
 .topnav {
@@ -136,6 +136,7 @@ body .results table{
 	margin: auto;
 	
 }
+/* change the look second text background here */
 body .results h2 {
 	color:rgba(190, 192, 216, 0.842);
 	background-color:rgb(0, 0, 0, 0.3);
@@ -176,7 +177,7 @@ body .results h2 {
   }
 
   .body .lookback button:hover{
-	  background-color: rgba(0, 0, 0, 0);
+	background-color:rgb(0, 0, 0, 0.3);
   }
 
 	.input button{
@@ -210,7 +211,8 @@ textarea{
 }
 
 .body .lookback h3{
-	font-size: medium;
+	font-size: large;
+	background-color: rgb(0, 0, 0, 0.3);
 }
 
 .main {
@@ -223,7 +225,7 @@ textarea{
 	text-decoration: none;
 }
 footer{
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 }
 .footer-distributed{
@@ -392,16 +394,35 @@ footer{
 		font-size: auto;
 		text-decoration: none;
 	}
+	.btn-primary{
+		width:-moz-fit-content;
+	}
+	btn-outline-warning btn-sm{
+	  width:-moz-available;
+	}
+	
+	body .results table {
+    color: rgba(190, 192, 216, 0.842);
+    font-size: small;
+    font-style: initial;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+}
+	.btn{
+		font-size: small;
+		line-height: 0.8;
+	}
  
 }
 
-@media screen and (max-width : 380px){
+@media screen and (max-width : 420px){
 	textarea {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+    width: 100%;
+	}
 	
-		width: 100%;
 	}
 	
 	.topnav button {
@@ -415,9 +436,11 @@ footer{
 		border-radius:  5px;
 		border-color: rgb(190, 169, 144);
 		margin: auto;
+
 		/*max-width:40%; 
 		min-width: 9%; */
 		width: 25%;
+
 	}
 
 	.topnav button a{
@@ -433,6 +456,15 @@ footer{
 	.topnav button .left{
 		font-size: 15px;
 	}
+
+	.topnav .right button{
+		float: right;
+		text-decoration: none;
+		font: normal 15px 'Cookie', cursive;
+		margin: 0;
+		color:  #e3e5e9;
+	
+	  }
 }	
 
 /*body .regform {
